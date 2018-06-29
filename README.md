@@ -1,7 +1,7 @@
 # Center App
 
-Phone Auth.
-Firebase Auth.
-Firestore
-Image upload
+Phone Auth,
+Firebase Auth,
+Firestore,
+Image upload,
 ngx-datatable
