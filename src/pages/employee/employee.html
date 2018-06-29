@@ -1,0 +1,106 @@
+
+
+  
+  <ion-content padding>
+    <div class = "table-title"> 
+        <ion-icon style="color: rgb(70,36,16);font-size: 35px;margin-right: 5px;font-weight: bold;" name="arrow-back"  ></ion-icon>
+        Employee
+    </div>
+    <div class = "table-add">
+        <div class="table-add-btn">
+                <div class="table-add-title" (click)="openaddemployee()">
+                        Add Employee
+                </div>                 
+        </div>
+    </div>
+    <div class="table-content">
+       <ngx-datatable
+         [headerHeight]="50"
+         [footerHeight]="50"
+         [rowHeight]="50"
+         [rows]="rows"
+         [columns]="columns"
+         [columnMode]="'force'"
+         [sorts]="sort_value"
+         [trackByProp]="'updated'"
+         [limit]="10">
+       
+            <ngx-datatable-column  prop="item_image" >
+                <ng-template ngx-datatable-header-template >
+                    <span id = "sort1" (click)="sort()">
+                      Name
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" >
+                   
+                </ng-template>
+            </ngx-datatable-column>    
+            <ngx-datatable-column  prop="inventory_snapshot" >
+                <ng-template ngx-datatable-header-template >
+                    <span id = "sort1" (click)="sort()">
+                      Customer Id
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" >
+                    <span>{{value}}</span>
+                </ng-template>
+            </ngx-datatable-column>    
+            <ngx-datatable-column  prop="make_model" >
+              <ng-template ngx-datatable-header-template >
+                  <span id = "sort1" (click)="sort()">
+                    Gender
+                  </span>
+              </ng-template>
+              <ng-template ngx-datatable-cell-template let-value="value" >
+                  <span>{{value}}</span>
+              </ng-template>
+            </ngx-datatable-column>   
+            <ngx-datatable-column  prop="owner" >
+              <ng-template ngx-datatable-header-template >
+                  <span id = "sort1" (click)="sort()">
+                    Qualification
+                  </span>
+              </ng-template>
+              <ng-template ngx-datatable-cell-template let-value="value" >
+                  <span>{{value}}</span>
+              </ng-template>
+            </ngx-datatable-column>  
+            <ngx-datatable-column  prop="Details" [sortable]="true"  >
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" (click)="openitemdetails()">
+                      Details
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                  <ion-icon  style="color: rgb(70,46,16);" name="ios-eye" (click) = "onShowDetails(row,rowIndex)" ></ion-icon>
+                </ng-template>
+            </ngx-datatable-column>   
+            <!-- <ngx-datatable-column  prop="Details" >
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" (click)="sort()">
+                        Details
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" >
+                  <ion-icon  name="arrow-dropdown" ></ion-icon>
+                  <ion-icon  name="arrow-dropdown" ></ion-icon>
+                </ng-template>
+            </ngx-datatable-column>  -->
+            <ngx-datatable-column  prop="Special Action" >
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" (click)="sort()">
+                      Special Action
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                  <ion-icon  style="margin-right:30px; color: rgb(70,46,16);" name="ios-trash" (click) = "onSpecialAction(row,'delete',rowIndex)" ></ion-icon>
+                  <ion-icon  name="md-checkbox-outline" style=" color: rgb(70,46,16);" (click) = "onSpecialAction(row,'edit',rowIndex)" ></ion-icon>
+                </ng-template>
+            </ngx-datatable-column>
+
+       </ngx-datatable>
+    </div>
+  
+  
+  </ion-content>
+

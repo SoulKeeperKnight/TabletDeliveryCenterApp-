@@ -1,0 +1,100 @@
+page-drivers {
+
+.scroll-content
+{
+	 margin-top: 90px;
+}
+
+.employeeform
+{
+   margin-top: 90px;
+    background: #fff;
+}
+
+.employeeform .label
+{
+    color:#000;
+        width: 130px;
+    max-width: 122px;
+    white-space: normal;
+}
+
+.employeeform .text-input
+{
+    border: solid 2px #e0e0e0;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 14px #e2e2e2;
+}
+
+.gender
+{
+    width: 33%;
+    float: right;
+        padding: 25px 0;
+}
+
+.gender_label
+{
+	float: left;
+    font-size: 17px;
+    margin-top: 28px;
+}
+
+.gender .label
+{
+	float:left;
+	margin:0;
+	    line-height: 24px;
+}
+
+.radio
+{
+	float: left;
+    margin-right: 16px;
+}
+
+.list 
+{
+	margin:0!important;
+}
+
+.radio-icon
+{
+	    width: 25px!important;
+    height: 25px!important;
+    box-shadow: 0px 6px 14px #e2e2e2!important;
+}
+
+.radio-checked {
+    border-color: #e0e0e0!important;
+}
+
+ .radio-inner {
+
+    background-color: #e0e0e0!important;
+        width: 17px!important;
+    height: 17px!important;
+    }
+
+.item-input-has-focus .item-inner,.input-has-focus:last-child
+{
+	border:none!important;
+	box-shadow:none!important;
+}
+
+.line
+{
+	    background: #dfdfdf;
+    width: 100%;
+    float: left;
+    height: 3px;
+    margin: 18px 0;
+}
+
+.address .text-input
+{
+	height:114px!important;
+}
+
+}

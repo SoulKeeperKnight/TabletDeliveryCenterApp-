@@ -1,0 +1,145 @@
+.table-content {
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+}
+confirm_orders {
+    .ngx-datatable .datatable-header {
+        display: none;
+    }
+    .scroll-content {
+        background-color: rgb(236,240,241);
+    }
+    datatable-body {
+        color: rgb(55,70,116);
+        font-weight: 100;
+    }
+    .page-count {
+        display: none;
+    }
+    .table-post {
+        color: rgb(77, 73, 73);
+        height: 100px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        text-align: center;
+
+        .table-back {
+            position: absolute;
+            font-size: 20px;
+            margin-left: 18px;
+            font-weight: 100;
+            margin-top: 10px;
+            color: gray;
+        }
+    }
+    .modal-alert {
+        position: absolute;
+        width: 600px;
+        height: 150px;
+        background-color: white;
+        z-index: 9999;
+        top: calc(50% - 75px);
+        left: calc(50% - 300px);
+        border-radius: 12px;
+        -moz-box-shadow: 2px 2px 1px 1px #cccccccc;
+        -webkit-box-shadow: 2px 2px 1px 1px #cccccccc;
+    }
+    .alert-content {
+        font-size: 40px;
+        text-align: center;
+        font-weight: 100;
+        color: rgb(70,36,16);
+        margin-top:20px; 
+    }
+    .alert-exit-btn {
+        padding: 15px 20px 0px 0px;
+    }
+    .alert-exit {
+        text-align: right;
+    }
+ }
+
+.table-title {
+    position: absolute;
+    font-size: 40px;
+    margin-left: 18px;
+    font-weight: 100;
+    margin-top: 10px;
+    color: rgb(70,36,16);
+}
+
+.table-header-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: gray;
+    margin-left: 20px;
+    line-height: 30px;
+}
+ .datatable-header-cell {
+    font-size: 0.8em;
+ }
+
+ .datatable-body-row {
+    padding: 10px;
+    height: 40px !important;
+ }
+
+ .datatable-row-even {
+    background: rgba(240, 240, 240, 1);
+ }
+
+ .datatable-row-odd {
+    background: rgba(255, 255, 255,1);
+ }
+
+ .datatable-body-cell {
+    font-size: 1.0em;
+    padding-left: 1em;
+ }
+
+
+ // Style footer appearance
+ .datatable-footer {
+    background: white;
+    padding: 0 1em 0 1em;
+
+    .pager {
+       li {
+            padding: 0 1em !important;
+
+            a {
+               color: rgba(68, 68, 68, 1);
+               text-decoration: none;
+            }
+         }
+    }
+ }
+
+
+ // Style rules for the footer pagination elements
+ .datatable-icon-done-all:before {
+    content: ">>";
+ }
+
+ .datatable-icon-left:before {
+    content: "<";
+ }
+
+ .datatable-icon-right:before {
+    content: ">";
+ }
+
+ .datatable-icon-skip:before {
+    content: ">>";
+ }
+
+ .datatable-icon-prev:before {
+    content: "<<";
+ }

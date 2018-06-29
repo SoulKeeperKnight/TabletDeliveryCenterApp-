@@ -1,0 +1,31 @@
+{
+   "technologies" : [
+      {
+         "item_image" : "./assets/img/avatar.png",
+         "item_name" : "Tractors",
+         "inventory_qty" : "32",
+         "activate_in_app" : "false",
+         "inventory_snapshot" : "Tractors",
+         "make_model" : "Mahindra",
+         "owner" : "ABC46"
+      },
+      {
+         "item_image" : "./assets/img/avatar.png",
+         "item_name" : "Tractors",
+         "inventory_qty" : "32",
+         "activate_in_app" : "true",
+         "inventory_snapshot" : "Tractors",
+         "make_model" : "Mahindra",
+         "owner" : "ABC46"
+      },
+      {
+         "item_image" : "./assets/img/avatar.png",
+         "item_name" : "Tractors",
+         "inventory_qty" : "32",
+         "activate_in_app" : "true",
+         "inventory_snapshot" : "Tractors",
+         "make_model" : "Mahindra",
+         "owner" : "ABC46"
+      }
+   ]
+}

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="side-bar-background"> 
+        <ion-list id = "sidenav">
+            <div *ngFor="let item of items">
+                <ion-item ion-item  (click)="onItemSelected(item)" [class.disable]="!item.showSubmenu" >
+                    <div class="item-block " style="text-align:center; width:40px" item-start>
+                        <img [src] = !item.showSubmenu?item.image_active:item.image_inactive item-start>
+                    </div>
+                    {{ item.description }}
+                </ion-item>
+                <ion-item-group *ngFor="let cell of item.childs;" submenu [class.disable]="item.showSubmenu">
+                    <ion-item  class ="sub-menu" [class.disable]="!item.showSubmenu" (click)="onItemSelected(cell)" >
+                            {{ cell.description }}
+                            <ion-icon *ngIf="cell.id == current_id" style="color:rgb(251,211,48); font-size: 15px; margin-top: 26px" name="arrow-dropright" item-end></ion-icon>
+                    </ion-item>
+                </ion-item-group>
+            </div>
+        </ion-list>
+</ion-content>

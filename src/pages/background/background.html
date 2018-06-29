@@ -1,0 +1,170 @@
+<div class="track-detail">
+    <div id="buffer" style="display:none">
+
+    </div>
+    <div class="track-content">
+        <div class="detail-content">
+            <div class="detail-title">
+                Item Details
+            </div>
+            <div class="spacing-pixel-10"></div>
+            <div *ngFor="let detail of aDetails">
+                <div class="detail-cell">
+                    <div class="detail-name">
+                        {{detail.name}}
+                    </div>
+                    <div class="detail-value">
+                        {{detail.value}}
+                    </div>
+                </div>
+                <div class="spacing-pixel-20"></div>
+            </div>
+        </div>
+        <div class="detail-image">
+            <img class="detail-image-cell" src="{{image}}">
+            <ion-icon class="detail-exit-btn" style="color: rgb(70,36,16);font-size: 15px;margin-left: 10px;font-weight: bold;" name="close"></ion-icon>
+            <div class="detail-print-btn">
+                <div class="detail-btn">
+                    <ion-icon name="print">
+
+                    </ion-icon>
+                    Print
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="order-detail">
+        <div id="buffer" style="display:none">
+    
+        </div>
+        <div class="order-content">
+            <div class="detail-content">
+                <div class="detail-title">
+                    Item Details
+                </div>
+                <div class="spacing-pixel-10"></div>
+                <div *ngFor="let order of orderDetails">
+                    <div class="detail-cell">
+                        <div class="detail-name">
+                            {{order.name}}
+                        </div>
+                        <div class="detail-value">
+                            {{order.value}}
+                        </div>
+                    </div>
+                    <div class="spacing-pixel-15"></div>
+                </div>
+            </div>
+            <div class="detail-image">
+                <!-- <img class="detail-image-cell" src="{{image}}"> -->
+                <ion-icon class="detail-exit-btn" style="color: rgb(70,36,16);font-size: 15px;margin-left: 10px;font-weight: bold;" name="close"></ion-icon>
+                <div class="detail-print-btn">
+                    <div class="detail-btn">
+                        <ion-icon name="print">
+    
+                        </ion-icon>
+                        Print
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class = "delete-modal">
+        <div class='delete-content'>
+                <div>You are about to delete {{delete_name}}. Are you sure? All the associated data would be lost.</div>
+                <div class="btn-content">
+                    <div class="btn-cell">
+                        <button class="btn-no" ion-button type="button" mode="ios" block icon-left (click)="deleteRow('false')" margin-top>No</button>
+                    </div>
+                    <div class="btn-cell">
+                        <button class="btn-yes" ion-button type="button" mode="ios" block icon-left (click)="deleteRow('true')" margin-top>Yes</button>
+                    </div>
+                </div> 
+        </div>
+</div>
+
+<div class = "delete-order">
+        <div class='delete-content'>
+                <div>You are about to delete {{delete_name}}. Are you sure? All the associated data would be lost.</div>
+                <div class="btn-content">
+                    <div class="btn-cell">
+                        <button class="btn-no" ion-button type="button" mode="ios" block icon-left (click)="deleteOrder('false')" margin-top>No</button>
+                    </div>
+                    <div class="btn-cell">
+                        <button class="btn-yes" ion-button type="button" mode="ios" block icon-left (click)="deleteOrder('true')" margin-top>Yes</button>
+                    </div>
+                </div> 
+        </div>
+</div>
+
+
+<div class="item_details-model" style="display:none">
+
+    
+    <ion-row class="item_details-model_row">
+        <h2>Employee Details  <img src = "./assets/img/close.png" style="width: 24px; float: right;" (click)="closemodel();"></h2>
+        <ion-row >
+        <ion-col col-4 class="left" >First Name</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4  class="left">Last Name</ion-col><ion-col col-8 class="right">Last Name</ion-col>
+        <ion-col col-4 class="left">Date of Birth</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Employee ID</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Mobile Number</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Gender</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Address</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">PIN Code</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Landmark</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">KYC Type</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">KYC Number</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Qualification</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">College/School of the highest degree held</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Tagged to Center</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Date of Employment</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Emergency Contact Name</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Emergency Contact Number</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Salary Hired at</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Blood Group of Employee</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        <ion-col col-4 class="left">Marital Status</ion-col><ion-col col-8 class="right">First Name</ion-col>
+        </ion-row>
+    </ion-row>
+
+</div>
+
+
+<div class='model-view'>
+    <div class='model-content'>
+        <div class='search-content'>
+            <img class='search-icon' src='./assets/img/search bar.png' style='margin-top: 26px; margin-left: 20px;'>
+            <span id='search-value' style='position: absolute;font-size: 23px;color: gray;margin-top: 30px;margin-left: 20px;'> Search Orders By</span>
+            <ion-icon id='search-start' name='arrow-dropdown' style='position: absolute;margin-left: 350px;margin-top: 25px;font-size: 45px;'></ion-icon>
+        </div>
+        <div class="list-content">
+            <span id='search-value-1' (click) = "globalSearch('Telephone')"> Telephone Number </span>
+            <span id='search-value-2' (click) = "globalSearch('Village')"> Village</span>
+            <span id='search-value-3' (click) = "globalSearch('Taluk')"> Taluk</span>
+            <span id='search-value-4' (click) = "globalSearch('Hobli')"> Hobli</span>
+            <span id='search-value-5' (click) = "globalSearch('Voter')"> Voter Id</span>
+            <span id='search-value-6' (click) = "globalSearch('Aadhar')"> Aadhar</span>
+            <span id='search-value-7' (click) = "globalSearch('Ration')"> Ration Card</span>
+        </div>
+    </div>
+</div>
+
+<ion-split-pane>
+    <ion-header>
+        <ion-navbar class="bar-custom">
+        <img class="logo" width="80" height="80" src="./assets/img/logo.png" />
+        <img class = "custom-header-notification" src = "./assets/img/header icons/header notification.png" >
+        <img class = "custom-header-add" src = "./assets/img/header icons/header add.png" >
+        <img class = "custom-header-search" src = "./assets/img/header icons/header search.png" >
+        <img class = "custom-header-avatar" src = "./assets/img/avatar.png" >
+        <ion-icon class="custom-header-avatar-down" name="ios-arrow-down"></ion-icon>
+        </ion-navbar>
+    </ion-header>
+    <ion-content>  
+    </ion-content>
+    <ion-nav [root]="masterPage" #masterNav></ion-nav>
+    <ion-nav [root]="detailPage" #detailNav main></ion-nav>
+</ion-split-pane>

@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Ionic Stack
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div class= "modal-alert">
+        <div class="alert-exit"> 
+            <ion-icon class="alert-exit-btn" style="color: rgb(70,36,16);font-size: 15px;margin-right: 5px;font-weight: bold;" name="close" ></ion-icon>
+        </div>
+        <div class="alert-content">Inventory has been confirmed!</div>   
+    </div>
+    <div class = "table-title"> 
+           Add New Inventory
+    </div>
+    <div class = "table-search">
+    </div>
+    <div class="table-content" [class.fixpanel] = "(select_type == 1)">
+        <div class="inventory-detail">
+            <div class = "header-title"> Product detail </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Category Of Inventory
+            </div>
+            <select style="margin-top: 8px;height: 30px;width: 30%;" [(ngModel)] = "select_type">
+                <option value="1">Machinery</option>
+                <option value="2">Consummable</option>
+            </select>
+        </div>
+        <div class = "content-spacing"></div>
+            <div class="content-title" style="margin-left: 10px;padding-top: 0px;">
+                Inventory Picture
+            </div>
+            <div class= "preview" (click) = "ShowAddImageButton()">
+                <img style="max-height: 100%; height:100%" src = "{{this.imageURI}}" >
+            </div>
+            <div *ngIf = "(showAddImage == true)" style="float: left; width:200px;" >
+                <button id="table-post-button" ion-button="" (click)="AddImagefromGallery($event)" style="float: left;">
+                        Add Image from Gallery
+                    </button>
+                <button id="table-post-button" ion-button="" (click)="AddImagefromCamera($event)" style="float: left;">
+                        Add Image from Camera
+                </button>
+            </div>
+        <div class = "content-spacing"></div>
+        <div class = "inventory-content"  *ngIf = "(select_type == 1)">
+            <div  *ngFor = "let data of aDetails" class = "inventory-cell">
+                <div class = "content-spacing"></div>
+                <div class="content-cell-title">
+                        {{data.name}}
+                </div>
+                <div class="content-cell-content">
+                    <ion-input *ngIf = "(data.type == 'text')" placeholder = {{data.name}} type = "text" [(ngModel)] = "data.value"></ion-input>
+                    <ion-input *ngIf = "(data.type == 'number')" placeholder = {{data.name}} type = "number" [(ngModel)] = "data.value"></ion-input>
+                    <my-date-picker *ngIf = "(data.type == 'date')" name="mydate" style="width:100%; float: left; border-radius:8px;" [options]="myDatePickerOptions"   [(ngModel)]="data.value" required></my-date-picker>
+                    <select *ngIf = "(data.type == 'select')" style="height: 100%;width: 100%;border: 1px solid transparent;" [(ngModel)] = "data.value">
+                        <option *ngFor = "let sensor of data.data; let i = index " selected="selected" value= {{sensor.value}} > {{sensor.value}} </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class = "inventory-content"  *ngIf = "(select_type == 2)">
+            <div *ngFor = "let data of bDetails" class = "inventory-cell">
+                <div class = "content-spacing"></div>
+                <div class="content-cell-title">
+                        {{data.name}}
+                </div>
+                <div class="content-cell-content">
+                    <ion-input *ngIf = "(data.type == 'text')" placeholder = {{data.name}} type = "text" [(ngModel)] = "data.value"></ion-input>
+                    <ion-input *ngIf = "(data.type == 'number')" placeholder = {{data.name}} type = "number" [(ngModel)] = "data.value"></ion-input>
+                    <my-date-picker *ngIf = "(data.type == 'date')" name="mydate" style="width:100%; float: left; border-radius:8px;" [options]="myDatePickerOptions"   [(ngModel)]="data.value" required></my-date-picker>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "table-post">
+        <button id = "table-post-button" ion-button (click)="nextOrder($event)">
+              Add Inventory
+        </button>
+    </div>
+  </ion-content>

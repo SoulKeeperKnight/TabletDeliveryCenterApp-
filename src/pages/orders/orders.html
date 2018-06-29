@@ -1,0 +1,154 @@
+<ion-header>
+        <ion-navbar>
+          <ion-title>
+            Ionic Stack
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+      
+      <ion-content padding>
+        <div class = "table-title"> 
+                Today's Orders
+        </div>
+        <div class = "table-search">
+                <ion-input placeholder = "Type to filter the search orders" style="float: left;margin-top: 18px;width: 80%;" type = "text" (keyup)="updateFilter($event)"
+                show-cancel="true" 
+                [(ngModel)] = "search_order"></ion-input>
+            <!-- <div class="table-search-btn">
+                    <img class="table-search-img" src = "./assets/img/search bar.png">
+                    <div class="table-search-title">
+                            Search Orders
+                    </div>                 
+            </div> -->
+            
+    
+        </div>
+        <div class="table-content">
+      
+            <!--
+               Embed the ngx-datatable component with following property bindings/values:
+             1. sorttype - allow data to be sorted on multiple columns
+             2. headerHeight - Set height of table header at 50 pixels
+             3. footerHeight - Set height of table footer at 50 pixels
+             4. rowHeight - Set height of table rows at 50 pixels
+             5. rows - Derives the data for the table rows from the component class
+                       property of rows
+             6. columns - Derives the names for the table columns from the component
+                          class property of columns
+             7. columnMode - Use of standard, flex or force - Force value makes columns
+                             equidistant and span the width of the parent container
+             8. limit - the number of records to display before paginating the results
+            -->
+           <ngx-datatable
+             #table
+             [selectionType]="single"
+             [headerHeight]="50"
+             [footerHeight]="50"
+             [rowHeight]="50"
+             [rows]="rows"
+             [sorts]="sort_value"
+             [columns]="columns"
+             [columnMode]="'force'"
+             [trackByProp]="'updated'"
+             [limit]="10"
+             
+             >
+             <!-- [externalSorting]="true"
+            [loadingIndicator]="loading"
+            (sort)="onSort($event)" -->
+             <!-- [sorts]="sort_value" -->
+             <!-- [externalPaging]="true"
+             [count]="page.totalElements"
+             [offset]="page.pageNumber"
+             [limit]="page.size"
+             (page)='setPage($event)' -->
+             <ngx-datatable-column prop="order_id" [sortable]="true">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" (click)="sort()">
+                    Order ID
+                    </span>
+    
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="prduct_date_string" [sortable]="true">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort2" (click)="sort()">
+                    Data/Day
+                    </span>
+    
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="customer_name" [sortable]="true">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort3" (click)="sort()">
+                    Customer Name
+                    </span>
+    
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="Details" [sortable]="false">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span (click)="sort()">
+                    Details
+                    </span>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="Driver ID" [sortable]="true">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort4" (click)="sort()">
+                            Driver ID
+                    </span>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="Order Value" [sortable]="false">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span (click)="sort()">
+                    Order Value
+                    </span>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column  prop="Special Action" >
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" >
+                    Special Action
+                    </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                <img src = "./assets/action view.png" style="width:26px; padding-bottom:5px" (click) = "onShowDetails(row,rowIndex)" >
+                <img src = "./assets/action trash.png" style="width:26px; padding-bottom:5px" (click) = "onSpecialAction(row,'delete',rowIndex)" >
+                <img src = "./assets/action edit.png"  style="width:26px; padding-bottom:5px" (click) = "onSpecialAction(row,'edit',rowIndex)" >
+
+        
+                <!-- <ion-icon  style="margin-right:30px; color: rgb(70,46,16);" name="ios-trash" (click) = "onSpecialAction(row,'delete',rowIndex,'false')" ></ion-icon>
+                <ion-icon  name="md-checkbox-outline" style=" color: rgb(70,46,16);" (click) = "onSpecialAction(row,'edit',rowIndex,'false')" ></ion-icon> -->
+                </ng-template>
+            </ngx-datatable-column>
+    
+             <!-- <ngx-datatable-footer>
+                <ng-template 
+                  ngx-datatable-footer-template 
+                  let-rowCount="rowCount"
+                  let-pageSize="pageSize"
+                  let-selectedCount="selectedCount"
+                  let-curPage="curPage"
+                  let-offset="offset">
+                  <div style="padding: 5px 10px">
+                    <div>
+                      <strong>Summary</strong>: Gender: Female
+                    </div>
+                    <hr style="width:100%" />
+                    <div>
+                      Rows: {{rowCount}} |
+                      Size: {{pageSize}} |
+                      Current: {{curPage}} |
+                      Offset: {{offset}}
+                    </div>
+                  </div>
+                </ng-template>
+             </ngx-datatable-footer> -->
+    
+           </ngx-datatable>
+        </div>
+      
+      
+      </ion-content>

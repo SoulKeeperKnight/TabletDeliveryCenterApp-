@@ -1,0 +1,233 @@
+
+  <ion-content padding>
+    <div class = "table-title"> 
+           Create Drivers
+    </div>
+    <div class = "table-search">
+
+    </div>
+
+    <ion-row class="employeeform">
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>First Name</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Last Name</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Date of Birth</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="drivers.dob"></ion-datetime>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Employee ID</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Mobile Number</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list inset>
+	        	
+	            	  <ion-label class="gender_label">Gender</ion-label>
+		              <span class="gender">
+		                
+		                <ion-radio  value="male"></ion-radio>
+		                <ion-label>Male</ion-label>
+		              </span>
+		              <span class="gender">
+		                
+		                <ion-radio  value="female"></ion-radio>
+		                <ion-label>Female</ion-label>
+		              </span>
+	          	
+            </ion-list>
+
+        </ion-col>
+
+        <span class="line"></span>
+
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Address</ion-label>
+                <ion-input type="text" class="address"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>PIN Code</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+        
+<!--         <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Mail ID</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col> -->
+        
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Landmark</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+<span class="line"></span>
+        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>KYC Type</ion-label>
+                <ion-select [(ngModel)]="drivers.kycType" >
+                  <ion-option value="rationcard">Ration Card</ion-option>
+                </ion-select>
+              </ion-item>
+             <!--  <ion-item>
+                <ion-label>KYC Type</ion-label>
+                <ion-input type="text" [(ngModel)]="employee.kycType"></ion-input>
+              </ion-item> -->
+            </ion-list>
+        </ion-col>
+                <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>KYC Number</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+
+        <span class="line"></span>
+
+
+                <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Qualification</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>College/School of the highest degree held</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+
+                <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Tagged to Center</ion-label>
+                <ion-select [(ngModel)]="drivers.center" >
+                  <ion-option value="center">Center</ion-option>
+                </ion-select>
+              </ion-item>
+             <!--  <ion-item>
+                <ion-label>KYC Type</ion-label>
+                <ion-input type="text" [(ngModel)]="employee.kycType"></ion-input>
+              </ion-item> -->
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Date of Employment</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Emergency Contact Name</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Emergency Contact Number</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Salary Hired at</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+                        <ion-col col-6>
+            <ion-list inset>
+              <ion-item>
+                <ion-label>Blood Group of Employee	</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+
+                <ion-col col-6>
+            <ion-list inset>
+	        	
+	            	  <ion-label class="gender_label">Marital Status</ion-label>
+		              <span class="gender">
+		                
+		                <ion-radio  value="male"></ion-radio>
+		                <ion-label>Married</ion-label>
+		              </span>
+		              <span class="gender">
+		                
+		                <ion-radio  value="female"></ion-radio>
+		                <ion-label>Single</ion-label>
+		              </span>
+	          	
+            </ion-list>
+
+        </ion-col>
+<ion-col col-12 style="text-align: center;">
+        <button ion-button>Register Driver</button>
+</ion-col>
+
+
+    </ion-row>
+
+
+
+</ion-content>

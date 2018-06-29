@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Ionic Stack
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div class = "table-title"> 
+            Place New Order
+    </div>
+    <div class = "table-search">
+    </div>
+    <div class="table-content">
+        <div class="product-detail">
+            <div class = "header-title"> Product detail </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Product
+            </div>
+            <div class="content-body">
+                <ion-input placeholder = "Product" type = "text" id = "product-input" [(ngModel)] = "product_name"></ion-input>
+            </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Date
+            </div>
+                <!-- <ion-input placeholder = "Date" type = "text" id = "product-date" [(ngModel)] = "product_date"></ion-input> -->
+            <my-date-picker name="mydate" style="width:60%; float: left; border-radius:8px;" [options]="myDatePickerOptions"   [(ngModel)]="product_date" required></my-date-picker>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                No, hours
+            </div>
+            <div class="content-body">
+                <ion-input placeholder = "No, hours"  type="number" id = "product-hour" [(ngModel)] = "product_hour"></ion-input>
+            </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Start time
+            </div>
+            <div class="content-body">
+                <!-- <ion-input placeholder = "Start time" type = "text" id = "product-start-time" [(ngModel)] = "product_start_time"></ion-input> -->
+                <input atp-time-picker style="width: 100%;height: 100%; display:block" onlyHour="true" [(ngModel)] = "product_start_time"/>
+            </div>
+        </div>
+        <div class = "product-line"></div>
+        <div class="location-detail">
+            <div class = "header-title"> Location Details </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                District
+            </div>
+            <div class="content-body" style="border: 0px;" *ngIf = "(district_able == 'true')" >
+                <ngx-select-dropdown  [multiple]="false" (change)="changeDistrictValue($event,'district')"  [(value)]="location_distrct" [config]="config" [options]="DistrictOption"></ngx-select-dropdown>
+                <!-- <ion-input placeholder = "District" type = "text" id = "location-distrct" [(ngModel)] = "location_distrct"></ion-input> -->
+            </div>
+            <div class="content-body" *ngIf = "(district_able == 'false')" >
+                    <!-- <ngx-select-dropdown  [multiple]="false" (change)="changeDistrictValue($event,'district')"  [(value)]="location_distrct" [config]="config" [options]="DistrictOption"></ngx-select-dropdown> -->
+                    <ion-input disabled placeholder = "District" type = "text" id = "location-distrct" [(ngModel)] = "location_distrct"></ion-input>
+            </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Taluk
+            </div>
+            <div class="content-body" style="border: 0px;" *ngIf = "(taluk_able == 'true')">
+                <ngx-select-dropdown [multiple]="false" (change)="changeDistrictValue($event,'taluk')"  [(value)]="location_taluk" [config]="config" [options]="TalukOption"></ngx-select-dropdown>
+                <!-- <ion-input placeholder = "Taluk" type = "text" id = "location-taluk" [(ngModel)] = "location_taluk"></ion-input> -->
+            </div>
+            <div class="content-body" *ngIf = "(taluk_able == 'false')">
+                    <!-- <ngx-select-dropdown [multiple]="false" (change)="changeDistrictValue($event,'taluk')"  [(value)]="location_taluk" [config]="config" [options]="TalukOption"></ngx-select-dropdown> -->
+                    <ion-input disabled placeholder = "Taluk" type = "text" id = "location-taluk" [(ngModel)] = "location_taluk"></ion-input>
+                </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Hobli
+            </div>
+            <div class="content-body" style="border: 0px;" *ngIf = "(hobli_able == 'true')"> 
+                    <ngx-select-dropdown [multiple]="false" (change)="changeDistrictValue($event,'hobli')"  [(value)]="location_hobli" [config]="config" [options]="HobliOption"></ngx-select-dropdown>
+                <!-- <ion-input placeholder = "Hobli" type = "text" id = "location-hobli" [(ngModel)] = "location_hobli"></ion-input> -->
+            </div>
+            <div class="content-body" *ngIf = "(hobli_able == 'false')"> 
+                    <!-- <ngx-select-dropdown [multiple]="false" (change)="changeDistrictValue($event,'hobli')"  [(value)]="location_hobli" [config]="config" [options]="HobliOption"></ngx-select-dropdown> -->
+                 <ion-input disabled placeholder = "Hobli" type = "text" id = "location-hobli" [(ngModel)] = "location_hobli"></ion-input>
+            </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Village name
+            </div>
+            <div class="content-body">
+                <ion-input placeholder = "Village name" type = "text" id = "location-village-name" [(ngModel)] = "location_village_name"></ion-input>
+            </div>
+        </div>
+        <div class="customer-detail">
+            <div class = "header-title"> Customer details </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Customer name
+            </div>
+            <div class="content-body">
+                <ion-input placeholder = "Customer name" type = "text" id = "customer-name" [(ngModel)] = "customer_name"></ion-input>
+            </div>
+            <div class = "content-spacing"></div>
+            <div class="content-title">
+                Customer ID
+            </div>
+            <div class="content-body">
+                <ion-input placeholder = "Customer ID" type = "text" id = "customer-id" [(ngModel)] = "customer_id"></ion-input>
+            </div>
+        </div>
+    </div>
+    <div class = "table-post">
+        <button id = "table-post-button" ion-button (click)="nextOrder($event)">
+              Place Order
+        </button>
+    </div>
+  </ion-content>

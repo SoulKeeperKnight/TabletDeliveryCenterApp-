@@ -1,0 +1,214 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Ionic Stack
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div class = "table-title"> 
+            Check Inventory
+    </div>
+    <div class = "table-add">
+        <div class="table-add-btn">
+                <div class="table-add-title">
+                        Add an item
+                </div>                 
+        </div>
+    </div>
+    
+    <div class="table-content">
+        <!-- <div class="tab">
+                <button class="tablinks" (click)="openTabs($event, 'Seeds')">London</button>
+                <button class="tablinks" (click)="openTabs($event, 'Tractor')">Paris</button>
+        </div> -->
+        <input id="tab1" type="radio" name="tabs" (click) = "tabClick()" checked>
+        <label for="tab1">Consummable</label>
+            
+        <input id="tab2" type="radio" name="tabs" (click) = "tabClick()">
+        <label for="tab2">Machinery</label>
+
+        <!-- A -->
+        <section id="content1">
+                <ngx-datatable
+                
+                 [headerHeight]="50"
+                 [footerHeight]="50"
+                 [rowHeight]="50"
+                 [rows]="rowsA"
+                 [columns]="columnsA"
+                 [columnMode]="'force'"
+                 [sorts]="sort_value"
+                 [trackByProp]="'updated'"
+                 [limit]="5">    
+                    <ngx-datatable-column  prop="image" >
+                        <ng-template ngx-datatable-header-template >
+                            <span id = "sort1" >
+                              Item Image
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                           <img src = "{{value}}" style="height:90px;margin-top:-30px">
+                        </ng-template>
+                    </ngx-datatable-column>    
+                    <ngx-datatable-column  prop="manufacturer" >
+                        <ng-template ngx-datatable-header-template >
+                            <span id = "sort1" >
+                                    Manufacturer
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                            <span>{{value}}</span>
+                        </ng-template>
+                    </ngx-datatable-column>    
+                    <ngx-datatable-column  prop="quantity" >
+                      <ng-template ngx-datatable-header-template >
+                          <span id = "sort1" >
+                            Inventory Qty
+                          </span>
+                      </ng-template>
+                      <ng-template ngx-datatable-cell-template let-value="value" >
+                          <span>{{value}}</span>
+                      </ng-template>
+                    </ngx-datatable-column>   
+                    <ngx-datatable-column  prop="activate_in_app" [sortable]="true"  >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                              Activate In App
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-row="row" >
+                            <label class="switch">
+                                <input type="checkbox" *ngIf = "value == 'true'" checked>
+                                <input type="checkbox" *ngIf = "value == 'false'">
+                                <span class="slider round"></span>
+                            </label>
+                        </ng-template>
+                    </ngx-datatable-column>   
+                    <!-- <ngx-datatable-column  prop="Details" >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                                Details
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                          <ion-icon  name="arrow-dropdown" ></ion-icon>
+                          <ion-icon  name="arrow-dropdown" ></ion-icon>
+                        </ng-template>
+                    </ngx-datatable-column>  -->
+                    <ngx-datatable-column  prop="Special Action" >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                              Special Action
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                                <img src = "./assets/action trash.png" style="width:30px" (click) = "onSpecialAction(row,'delete',rowIndex,'true')" >
+                                <img src = "./assets/action edit.png"  style="width:30px" (click) = "onSpecialAction(row,'edit',rowIndex,'true')" >
+                          <!-- <ion-icon  style="margin-right:30px; color: rgb(70,46,16);" name="ios-trash" (click) = "onSpecialAction(row,'delete',rowIndex,'true')" ></ion-icon>
+                          <ion-icon  name="md-checkbox-outline" style=" color: rgb(70,46,16);" (click) = "onSpecialAction(row,'edit',rowIndex,'true')" ></ion-icon> -->
+                        </ng-template>
+                    </ngx-datatable-column>
+               </ngx-datatable>
+        </section>
+
+       <!-- B -->
+       <section id="content2">
+            <ngx-datatable
+                
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [rowHeight]="50"
+                [rows]="rowsB"
+                [columns]="columnsB"
+                [columnMode]="'force'"
+                [sorts]="sort_value"
+                [trackByProp]="'updated'"
+                [limit]="5">
+            
+                    <ngx-datatable-column  prop="image" >
+                        <ng-template ngx-datatable-header-template >
+                            <span id = "sort1" >
+                            Item Image
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                        <img src = "{{value}}" style="height:90px;margin-top:-30px">
+                        </ng-template>
+                    </ngx-datatable-column>    
+                    <ngx-datatable-column  prop="inventory_snapshot" >
+                        <ng-template ngx-datatable-header-template >
+                            <span id = "sort1" >
+                            Inventory Snapshot
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                            <span>{{value}}</span>
+                        </ng-template>
+                    </ngx-datatable-column>    
+                    <ngx-datatable-column  prop="manufacturer" >
+                    <ng-template ngx-datatable-header-template >
+                        <span id = "sort1" >
+                            Make Model
+                        </span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-value="value" >
+                        <span>{{value}}</span>
+                    </ng-template>
+                    </ngx-datatable-column>   
+                    <ngx-datatable-column  prop="assetOwner" >
+                    <ng-template ngx-datatable-header-template >
+                        <span id = "sort1" >
+                            Owner
+                        </span>
+                    </ng-template>
+                    <ng-template ngx-datatable-cell-template let-value="value" >
+                        <span>{{value}}</span>
+                    </ng-template>
+                    </ngx-datatable-column>  
+                    <ngx-datatable-column  prop="Details" [sortable]="true"  >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                            Details
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                                <img src = "./assets/action view.png" style="width:30px" (click) = "onShowDetails(row,rowIndex)" >
+                        <!-- <ion-icon  style="color: rgb(70,46,16);" name="ios-eye" (click) = "onShowDetails(row,rowIndex)" ></ion-icon>
+                         -->
+                        </ng-template>
+                    </ngx-datatable-column>   
+                    <!-- <ngx-datatable-column  prop="Details" >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                                Details
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" >
+                        <ion-icon  name="arrow-dropdown" ></ion-icon>
+                        <ion-icon  name="arrow-dropdown" ></ion-icon>
+                        </ng-template>
+                    </ngx-datatable-column>  -->
+                    <ngx-datatable-column  prop="Special Action" >
+                        <ng-template ngx-datatable-header-template let-sort="sortFn">
+                            <span id = "sort1" >
+                            Special Action
+                            </span>
+                        </ng-template>
+                        <ng-template ngx-datatable-cell-template let-value="value" let-rowIndex="rowIndex" let-row="row" let-expanded="expanded" >
+                        <img src = "./assets/action trash.png" style="width:30px" (click) = "onSpecialAction(row,'delete',rowIndex,'false')" >
+                        <img src = "./assets/action edit.png"  style="width:30px" (click) = "onSpecialAction(row,'edit',rowIndex,'false')" >
+
+                
+                        <!-- <ion-icon  style="margin-right:30px; color: rgb(70,46,16);" name="ios-trash" (click) = "onSpecialAction(row,'delete',rowIndex,'false')" ></ion-icon>
+                        <ion-icon  name="md-checkbox-outline" style=" color: rgb(70,46,16);" (click) = "onSpecialAction(row,'edit',rowIndex,'false')" ></ion-icon> -->
+                        </ng-template>
+                    </ngx-datatable-column>
+
+            </ngx-datatable>
+        </section>
+    </div>
+  
+  
+  </ion-content>

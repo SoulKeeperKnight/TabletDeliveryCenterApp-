@@ -1,0 +1,160 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div class = "table-title"> 
+           Dashboard
+    </div>
+    <div class = "table-search">
+
+    </div>
+    <div  class="table-first">
+        <div class = "table-cell">
+            <div class="table-cell-title">
+                    <div class="title-header">174</div> 
+                    <div class="title-body">Orders</div> 
+            </div>
+            <div class ="table-cell-body">
+                <svg viewBox="0 0 500 100" class="chart">
+                    <polyline
+                    class = "pol-1"
+                    fill="none"
+                    stroke="#7bc043"
+                    stroke-width="10"
+                    points=""
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class = "table-cell">
+            <div class="table-cell-title">
+                    <div class="title-header"> 74</div> 
+                    <div class="title-body">Incrase</div> 
+            </div>
+            <div class ="table-cell-body">
+                <svg viewBox="0 0 500 100" class="chart">
+                    <polyline
+                    class = "pol-1"
+                    fill="none"
+                    stroke="#7bc043"
+                    stroke-width="10"
+                    points=""
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class = "table-cell">
+            <div class="table-cell-title">
+                    <div class="title-header"> 50</div> 
+                    <div class="title-body">New customers</div> 
+            </div>
+            <div class ="table-cell-body">
+                <svg viewBox="0 0 500 100" class="chart">
+                    <polyline
+                    class = "pol-1"
+                    fill="none"
+                    stroke="#7bc043"
+                    stroke-width="10"
+                    points=""
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class = "table-cell" style="margin-right:0px">
+            <div class="table-cell-title">
+                    <div class="title-header">174</div> 
+                    <div class="title-body">Partner Vehicles</div> 
+            </div>
+            <div class ="table-cell-body">
+                <svg viewBox="0 0 500 100" class="chart">
+                    <polyline
+                    class = "pol-1"
+                    fill="none"
+                    stroke="#7bc043"
+                    stroke-width="10"
+                    points=""
+                    />
+                </svg>
+            </div>
+        </div>
+    
+
+    </div>
+    
+    <div class="table-content">
+            <div style="display: block; margin-left: calc(50% - 400px);">
+                <canvas baseChart width="800" height="400"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [colors]="lineChartColors"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+            </div> 
+            <div class ="table-other">
+                <div class = "other-cell">
+                    <div class = "cell-title">
+                        Estimated Saving
+                    </div>
+                    <div class = "cell-body">
+                        <div class="cell"> 
+                            <div class = "tag1">
+                                For today 
+                            </div>
+                            <div class = "tag2">
+                                Rs 26,520
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class = "tag1">
+                                For this month
+                            </div>
+                            <div class = "tag2">
+                                    Rs 223,423
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "other-cell">
+                    <div class = "cell-title">
+                        Values in Percantage
+                    </div>
+                    <div class = "cell-body">
+                        <div class="cell"> 
+                            <div class = "tag1">
+                                For today 
+                            </div>
+                            <div class = "tag2">
+                                56%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "other-cell">
+                    <div class = "cell-title">
+                       Clinet Code: ERGD DFEG SEGO RGES
+                    </div>
+                    <div class = "cell-body">
+                        <div class="cell"> 
+                            <div class = "tag1">
+                                For Month 
+                            </div>
+                            <div class = "tag2">
+                                56%
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+
+
+    
+  </ion-content>

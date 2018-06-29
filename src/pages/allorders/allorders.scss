@@ -1,0 +1,115 @@
+.table-content {
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+}
+allorders {
+    .scroll-content {
+        background-color: rgb(236,240,241);
+       }
+}
+.table-title {
+    position: absolute;
+    font-size: 40px;
+    margin-left: 18px;
+    font-weight: 100;
+    margin-top: 10px;
+    color: rgb(70,36,16);
+}
+.table-search {
+    position: absolute;
+    right: 37px;
+    width: 60%;
+    height: 60px;
+    border-bottom: 2px solid rgb(160, 120, 80);
+}
+.table-search-btn {
+    position: absolute;
+    right: 10px;
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: rgb(255, 213, 49);
+    padding: 8px;
+}
+.table-search-img {
+    width: 15px;
+}
+.table-search-title {
+    position: absolute;
+    right: 10px;
+    margin-top: -18px;
+}
+
+.datatable-header {
+    background: transparent;
+    padding: 1em 0 0 1.5em;
+ }
+
+ .datatable-header-cell {
+    font-size: 0.8em;
+ }
+
+ .datatable-body-row {
+    padding: 10px;
+    height: 40px !important;
+ }
+ .row-disable {
+     color: rgb(173, 162, 162);
+ }
+
+ .datatable-row-even {
+    background: rgba(240, 240, 240, 1);
+ }
+
+ .datatable-row-odd {
+    background: rgba(255, 255, 255,1);
+ }
+
+ .datatable-body-cell {
+    font-size: 1.0em;
+    padding-left: 1em;
+ }
+
+
+ // Style footer appearance
+ .datatable-footer {
+    background: white;
+    padding: 0 1em 0 1em;
+
+    .pager {
+       li {
+            padding: 0 1em !important;
+
+            a {
+               color: rgba(68, 68, 68, 1);
+               text-decoration: none;
+            }
+         }
+    }
+ }
+
+
+ // Style rules for the footer pagination elements
+ .datatable-icon-done-all:before {
+    content: ">>";
+ }
+
+ .datatable-icon-left:before {
+    content: "<";
+ }
+
+ .datatable-icon-right:before {
+    content: ">";
+ }
+
+ .datatable-icon-skip:before {
+    content: ">>";
+ }
+
+ .datatable-icon-prev:before {
+    content: "<<";
+ }

@@ -1,0 +1,194 @@
+.table-content {
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+}
+allsearch {
+    .scroll-content {
+        background-color: rgb(236,240,241);
+       }
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #eee;
+}
+
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f187'; }
+label[for*='2']:before { content: '\f183'; }
+label[for*='3']:before { content: '\f0d1'; }
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3{
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
+
+}
+.table-title {
+    position: absolute;
+    font-size: 40px;
+    margin-left: 18px;
+    font-weight: 100;
+    margin-top: 10px;
+    color: rgb(70,36,16);
+}
+
+.datatable-header {
+    background: transparent;
+    padding: 1em 0 0 2em;
+ }
+
+ .datatable-header-cell {
+    font-size: 0.8em;
+ }
+
+ .datatable-body-row {
+    padding: 10px;
+    height: 40px !important;
+ }
+ .row-disable {
+     color: rgb(173, 162, 162);
+ }
+
+ .datatable-row-even {
+    background: rgba(240, 240, 240, 1);
+ }
+
+ .datatable-row-odd {
+    background: rgba(255, 255, 255,1);
+ }
+
+ .datatable-body-cell {
+    font-size: 1.0em;
+    padding-left: 1em;
+ }
+
+
+ // Style footer appearance
+ .datatable-footer {
+    background: white;
+    padding: 0 1em 0 1em;
+
+    .pager {
+       li {
+            padding: 0 1em !important;
+
+            a {
+               color: rgba(68, 68, 68, 1);
+               text-decoration: none;
+            }
+         }
+    }
+ }
+
+
+ // Style rules for the footer pagination elements
+ .datatable-icon-done-all:before {
+    content: ">>";
+ }
+
+ .datatable-icon-left:before {
+    content: "<";
+ }
+
+ .datatable-icon-right:before {
+    content: ">";
+ }
+
+ .datatable-icon-skip:before {
+    content: ">>";
+ }
+
+ .datatable-icon-prev:before {
+    content: "<<";
+ }

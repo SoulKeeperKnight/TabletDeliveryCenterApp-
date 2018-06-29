@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Ionic Stack
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div class= "modal-alert">
+        <div class="alert-exit"> 
+            <ion-icon class="alert-exit-btn" style="color: rgb(70,36,16);font-size: 15px;margin-right: 5px;font-weight: bold;" name="close" (click) = "sendNext()" ></ion-icon>
+        </div>
+        <div class="alert-content">Order has been confirmed!</div>   
+    </div>
+    <div class = "table-title">
+            <ion-icon style="color: rgb(70,36,16);font-size: 35px;margin-right: 5px;font-weight: bold;" name="arrow-back"  ></ion-icon>
+            Confirm Order Time
+    </div>
+    <div class = "table-search">
+    
+    </div>
+    <div class="table-content">
+        <div class="table-header-title">
+                Unfortunately the time slot you requested is not available.
+                <br>
+                Choose another time from the slot below.
+        </div>
+        <div *ngIf = "true">
+       <ngx-datatable
+         #table
+         [headerHeight]="50"
+         [footerHeight]="50"
+         [rowHeight]="50"
+         [rows]="rows"
+         [columns]="columns"
+         [columnMode]="'flex'"
+         [sorts]="sort_value"
+         [trackByProp]="'updated'"
+         [limit]="10"
+         [selected]="selected"
+         [selectCheck]="checkSelectable"
+         [rowClass]="getRowClass"
+         [selectionType]="'checkbox'"
+         [selectAllRowsOnPage]="false"
+         (select)='onSelect($event)'
+         [displayCheck]="displayCheck"
+         [trackByProp]="'updated'"
+          (activate)="onActivate($event)"
+         >
+         <ngx-datatable-column  prop="confirm_time" [sortable]="true"  [flexGrow]="2">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort1" (click)="sort()">
+                        confirm_time
+                    </span>
+                    <ion-icon  name="arrow-dropdown" ></ion-icon>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-value="value" let-row = "row" let-isSelected="isSelected" let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <input type="checkbox" *ngIf = "row.disable == 'false'" [checked]="isSelected" (change)="onCheckboxChangeFn($event)"/>
+                    <input type="checkbox" *ngIf = "row.disable == 'true'" disabled [checked]="isSelected" (change)="onCheckboxChangeFn($event)"/>
+                    <span style="margin-left: 20px">{{value}}</span>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="confirm_date" [flexGrow]="1">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort2" (click)="sort()">
+                        confirm_date
+                    </span>
+                    <ion-icon  name="arrow-dropdown" ></ion-icon>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column prop="confirm_week" [sortable]="true" [flexGrow]="8">
+                <ng-template ngx-datatable-header-template let-sort="sortFn">
+                    <span id = "sort3" (click)="sort()">
+                        confirm_week
+                    </span>
+                    <ion-icon  name="arrow-dropdown" ></ion-icon>
+                </ng-template>
+            </ngx-datatable-column>
+            
+
+       </ngx-datatable>
+    </div>
+    </div>
+    <div class = "table-post">
+        <div class = "table-back">
+                <ion-icon style="color: rgb(70,36,16);font-size: 20px;margin-right: 5px;font-weight: bold;" name="arrow-back"  ></ion-icon>
+                Go back and rest Order 
+        </div>
+        <button id = "table-post-button" ion-button (click)="nextOrder($event)">
+                Place Order
+        </button>
+    </div>
+  
+  
+  </ion-content>
